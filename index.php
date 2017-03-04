@@ -2,7 +2,7 @@
 	require 'vendor/autoload.php';
 	require 'includes/config.php';
 	require 'includes/common.php';
-	require 'includes/WakeOnLan.php';
+	require 'includes/WakeOnLAN.php';
 	
 	$log = new Katzgrau\KLogger\Logger('logs/');
 	
