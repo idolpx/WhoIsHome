@@ -2,6 +2,7 @@
 	require 'vendor/autoload.php';
 	require 'includes/config.php';
 	require 'includes/common.php';
+	require 'includes/WakeOnLan.php';
 	
 	$log = new Katzgrau\KLogger\Logger('logs/');
 	
@@ -37,8 +38,9 @@
 		}
 
 		if ($_POST['action'] == "Wake") {
-			$cmd = 'sudo etherwake '.$_POST['mac'];
-			$output = shell_exec($cmd);
+			//$cmd = 'sudo etherwake '.$_POST['mac'];
+			//$output = shell_exec($cmd);
+			WakeOnLAN::wakeUp($_POST['mac'], '192.168.1.255');
 		} else {
 			// Save Status
 			file_put_contents($data."devices.json", json_encode($devices, JSON_PRETTY_PRINT));
