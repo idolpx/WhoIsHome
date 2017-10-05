@@ -4,7 +4,7 @@ A simple network based presence detection system.
 ## Requirements
 
 composer  - https://getcomposer.org/
-nmap      - https://nmap.org/<br>
+nmap      - https://nmap.org/
 curl      - https://curl.haxx.se/
 
 ## Installation
