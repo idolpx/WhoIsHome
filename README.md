@@ -16,10 +16,12 @@ A simple network based presence detection system.  It works by using nmap to do 
 I have the event on my system set to send an email to the SMS gateway of my service provider to send a text message to my phone.  The event can be configured to do just about anything though.
 
 Currently I am running this on a PogoPlug v2 E02 and Arch Linux with Apache.<br>
-I have also tested this on Windows running IIS.
+I have also tested this on a Windows machine running IIS.
 
 ## Requirements
 
+Apache/Nginx/IIS
+PHP
 composer  - https://getcomposer.org/<br>
 nmap      - https://nmap.org/<br>
 curl      - https://curl.haxx.se/
