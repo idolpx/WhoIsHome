@@ -71,7 +71,7 @@ Add Cron Job to run cron.php script every 5mins
 
 ## Usage
 
-Goto  http://localhost/whoishome to get to the main user interface.
+Browse to  http://localhost/whoishome to get to the main user interface.
 
 Use http://localhost/whoishome/cron.php?debug=1 to trigger the scan manually and see the debug output.
 You can also assign a group and name to each device that is found and update, delete or wake a device on the network.
