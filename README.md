@@ -3,7 +3,7 @@ A simple network based presence detection system.  It works by using nmap to do 
 
 #### Mobile devices can be Home or Away.
 - A Home event is triggered immediately when the device is seen on the network and the current status is Away
-- A device is determined away when it has not been seen within 30min (configureable) and an Away event is triggered
+- A device is determined Away when it has not been seen within 30min (configureable) then an event is triggered
 
 (Note: Some devices go online/offline a lot to conserve battery power. That is the reason for the 30min window when determining that a device is away.)
 
@@ -15,7 +15,7 @@ A simple network based presence detection system.  It works by using nmap to do 
 
 I have the event on my system set to send an email to the SMS gateway of my service provider to send a text message to my phone.  The event can be configured to do just about anything though.
 
-Currently I am running this on a PogoPlug v2 E02 and Arch Linux with Apache.
+Currently I am running this on a PogoPlug v2 E02 and Arch Linux with Apache.<br>
 I have also tested this on Windows running IIS.
 
 ## Requirements
