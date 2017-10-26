@@ -1,5 +1,21 @@
 # WhoIsHome
-A simple network based presence detection system.
+A simple network based presence detection system.  It works by using nmap to do a ping sweep of the network every 5 minutes.  It matches the MAC address to each device found to known devices and compares the last time it was seen to current scan time to determine if the device is Home, Away, Offline, Online or Unknown.  
+
+Mobile devices can be Home or Away.
+- A Home event is triggered immediately when the device is seen on the network and the current status is Away
+- A device is determined away when it has not been seen within 30min (configureable) and an Away event is triggered
+
+(Note: Some devices go online/offline a lot to conserve battery power. That is the reason for the 30min window when determining that a device is away.)
+
+Stationary devices can be Online or Offline.
+- Currently no event is triggered when a stationary device changes status but it would be easy to add an event
+
+Unknown devices will trigger an event until it is identified.
+
+I have the event on my system set to send an email to the SMS gateway of my service provider to send a text message to my phone.  The event can be configured to do just about anything though.
+
+Currently I am running this on a PogoPlug v2 E02 and Arch Linux with Apache.
+I have also tested this on Windows running IIS.
 
 ## Requirements
 
