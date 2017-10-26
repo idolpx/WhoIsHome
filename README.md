@@ -16,6 +16,7 @@ Change directory into that folder and issue the following command.
 composer install
 ```
 
+Set owner to the user tha tyour web service runs as.
 ```
 chown -R http:http .
 ```
@@ -35,13 +36,22 @@ curl -L -u media:media --max-redirs 999 http://192.168.1.240/whoishome/cron.php
 ## Linux Setup
 
 On linux create a file named "whoishome" in /etc/sudoers.d that contains the following line.
+Change "http" to the user that your web service runs as.
 
 ```
-www-data ALL=(ALL) NOPASSWD: /usr/bin/nmap
+http ALL=(ALL) NOPASSWD: /usr/bin/nmap
 ```
 
-Add Cron Job to run cron.php script as user www-data every 5mins
+Add Cron Job to run cron.php script every 5mins
 
 ```
 */5 * * * * curl -L -u media:media --max-redirs 999 http://192.168.1.240/whoishome/cron.php
 ```
+
+
+## Usage
+
+Goto  http://localhost/whoishome to get to the main user interface.
+
+Use http://localhost/whoishome/cron.php?debug=1 to trigger the scan manually and see the debug output.
+You can also assign a group and name to each device that is found and update, delete or wake a device on the network.
