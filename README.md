@@ -22,8 +22,8 @@ I have also tested this on a Windows machine running IIS.
 
 ## Requirements
 
-Apache/Nginx/IIS
-PHP
+Apache/Nginx/IIS<br>
+PHP<br>
 composer  - https://getcomposer.org/<br>
 nmap      - https://nmap.org/<br>
 curl      - https://curl.haxx.se/
