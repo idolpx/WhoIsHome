@@ -1,7 +1,7 @@
 # WhoIsHome
 A simple network based presence detection system.  
 
-It works by using nmap to do a ping sweep of the network every 5 minutes.  It matches the MAC address to each device found to a list of known devices and compares the last time it was seen to current scan time to determine if the device is Home, Away, Offline, Online or Unknown.  
+It works by using nmap to do a ping sweep of the network every 5 minutes.  It matches the MAC address to each device found to a list of known devices and compares the last time it was seen to the current scan time to determine if the device is Home, Away, Online, Offline or Unknown.  
 
 #### Mobile devices can be Home or Away.
 - A Home event is triggered immediately when the device is seen on the network and the current status is Away
