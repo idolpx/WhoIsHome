@@ -50,7 +50,7 @@ If running on a windows web server, create "bin" folder and put nmap.exe & curl.
 Setup a scheduled task to run the following command every 5mins as administrator
 
 ```
-curl -L --max-redirs 999 http://192.168.1.240/whoishome/cron.php
+curl -L --max-redirs 999 http://localhost/whoishome/cron.php
 ```
 
 ## Linux Setup
@@ -65,7 +65,7 @@ http ALL=(ALL) NOPASSWD: /usr/bin/nmap
 Add Cron Job to run cron.php script every 5mins
 
 ```
-*/5 * * * * curl -L --max-redirs 999 http://192.168.1.240/whoishome/cron.php
+*/5 * * * * curl -L --max-redirs 999 http://localhost/whoishome/cron.php
 ```
 
 
