@@ -65,7 +65,7 @@ http ALL=(ALL) NOPASSWD: /usr/bin/nmap
 Add Cron Job to run cron.php script every 5mins
 
 ```
-*/5 * * * * curl -L -u media:media --max-redirs 999 http://192.168.1.240/whoishome/cron.php
+*/5 * * * * curl -L --max-redirs 999 http://192.168.1.240/whoishome/cron.php
 ```
 
 
