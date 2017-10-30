@@ -14,9 +14,9 @@
 
 	}
 	
-	$oui = array();
-	if (file_exists($data."oui.json"))
-		$oui = json_decode(file_get_contents($data."oui.json"), true);
+//	$oui = array();
+//	if (file_exists($data."oui.json"))
+//		$oui = json_decode(file_get_contents($data."oui.json"), true);
 	
 	$devices = array();
 	if (file_exists($data."devices.json"))

@@ -9,7 +9,7 @@ if (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') {
     $isWindows = true;
 }
 
-$away_timeout = 17;
+$away_timeout = 20;
 
 $bin = '/var/www/html/whoishome/bin/';
 $data = '/var/www/html/whoishome/data/';

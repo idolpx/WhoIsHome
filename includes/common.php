@@ -7,7 +7,10 @@ function pingScan($subnet) {
 		$cmd = $bin."nmap.exe -sP -n -PT80 $subnet";
 	} else {
 		//$cmd = "ping -b -c 3 255.255.255.255 >/dev/null 2>&1; arp -an | awk '{print $2.$4}'";
-		$cmd = "sudo nmap -sP -n -PT80 $subnet";
+		//$cmd = "sudo nmap -sP -n -PT80 $subnet";
+		//$cmd = "nmap -sP -n -PT80 $subnet";
+		//$cmd = "sudo arp-scan -lI eth0";
+		$cmd = "sudo nmap -sn $subnet";
 	}
 	$output = shell_exec($cmd);
 	if($debug) echo "Command: $cmd<br />\n"; //echo $isWindows; exit();
@@ -28,7 +31,7 @@ function pingScan($subnet) {
 	$array = array();
 	for($i=0; $i<count($matches[0]); $i++) {
 		$mac = strtoupper($matches[2][$i]);
-		$array[$mac]['ip'] = $matches[1][$i];
+		$array[$mac] = $matches[1][$i];
 		//echo "ip:".$matches[1][$i].", mac: ".$matches[2][$i]."<br />\n";
 	}
 	//echo "<br />\n";

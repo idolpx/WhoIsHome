@@ -102,7 +102,7 @@
 				
 				$vendor = str_replace(':', '', $key);
 				$vendor = substr($vendor, 0, 6);
-				$vendor = $oui[$vendor]['name'];
+				$vendor = $oui[$vendor];
 				$devices[$key]['vendor'] = $vendor;
 			}
 		}
@@ -115,6 +115,8 @@
 			//echo $devices[$key]['name'].'->'.$devices[$key]['lasthome'].'->'.$diff.'<br />';
 			
 			if(isset($current_scan[$key])) {
+				$devices[$key]['ip'] = $current_scan[$key];
+
 				if($debug)
 					echo "Found: "."[".$devices[$key]['status']."][$key][".$devices[$key]['ip']."][$diff], ".$devices[$key]['group'].':'.$devices[$key]['name']."<br/>";
 
@@ -161,6 +163,7 @@
 		file_put_contents($data."devices.json", json_encode($devices, JSON_PRETTY_PRINT));
 		
 		// Send Notifications
+		if(strlen($_POST['action']) == 0)
 		if(isset($alerts['home']) || isset($alerts['away']) || isset($alerts['unknown']))
 			sendAlerts();
 		
