@@ -1,7 +1,7 @@
 {
     "require": {
         "psr/log": "^1.0",
-        "katzgrau/klogger": "dev-master",
-        "phpmailer/phpmailer": "^5.2"
+        "katzgrau/klogger": "^1.2",
+        "phpmailer/phpmailer": "^6.0"
     }
 }
