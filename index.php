@@ -22,30 +22,31 @@
 	if (file_exists($data."devices.json"))
 		$devices = json_decode(file_get_contents($data."devices.json"), true);
 		
-	if (isset($_POST['mac'])) {	
-		if ($_POST['action'] == "Update") {
-			$devices[$_POST['mac']]['group'] = $_POST['group'];
-			$devices[$_POST['mac']]['name'] = $_POST['name'];
-			if ($_POST['mobile']) {
-				$devices[$_POST['mac']]['mobile'] = true;
-			} else {
-				$devices[$_POST['mac']]['mobile'] = false;
-			}
-			$log->info("[updated][$key][".$devices[$key]['ip']."], ".$devices[$key]['group'].':'.$devices[$key]['name']);
-		} elseif ($_POST['action'] == "Delete") {
-			unset($devices[$_POST['mac']]);
-			$log->info("[deleted][$key][".$devices[$key]['ip']."], ".$devices[$key]['group'].':'.$devices[$key]['name']);
-		}
+        if (isset($_POST['mac'])) {
+                $key = $_POST['mac'];
+                if ($_POST['action'] == "Update") {
+                        $devices[$key]['group'] = $_POST['group'];
+                        $devices[$key]['name'] = $_POST['name'];
+                        if ($_POST['mobile']) {
+                                $devices[$key]['mobile'] = true;
+                        } else {
+                                $devices[$key]['mobile'] = false;
+                        }
+                        $log->info("[updated][$key][".$devices[$key]['ip']."], ".$devices[$key]['group'].':'.$devices[$key]['name']);
+                } elseif ($_POST['action'] == "Delete") {
+                        $log->info("[deleted][$key][".$devices[$key]['ip']."], ".$devices[$key]['group'].':'.$devices[$key]['name']);
+                        unset($devices[$key]);
+                }
 
-		if ($_POST['action'] == "Wake") {
-			//$cmd = 'sudo etherwake '.$_POST['mac'];
-			//$output = shell_exec($cmd);
-			WakeOnLAN::wakeUp($_POST['mac'], '192.168.1.255');
-		} else {
-			// Save Status
-			file_put_contents($data."devices.json", json_encode($devices, JSON_PRETTY_PRINT));
-		}	
-	}
+                if ($_POST['action'] == "Wake") {
+                        //$cmd = 'sudo etherwake '.$_POST['mac'];
+                        //$output = shell_exec($cmd);
+                        WakeOnLAN::wakeUp($key, '192.168.1.255');
+                } else {
+                        // Save Status
+                        file_put_contents($data."devices.json", json_encode($devices, JSON_PRETTY_PRINT));
+                }
+        }
 
 	$devices = natsort2d($devices);
 ?>
