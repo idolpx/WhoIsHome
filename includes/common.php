@@ -50,7 +50,7 @@ function sendAlerts() {
 	global $log, $alerts, $devices;
 	global $smtp_host, $smtp_user, $smtp_pass, $alert_from, $alert_email;
 
-	$mail = new PHPMailer;
+	$mail = new PHPMailer\PHPMailer\PHPMailer;
 
 	//$mail->SMTPDebug = 3;                               // Enable verbose debug output
 
