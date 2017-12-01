@@ -8,6 +8,10 @@
 	// Component Tests
 	//$log->info('Returned a million search results'); echo 'ok!'; exit();
 	//sendAlerts(); exit();
+	if (disk_free_space($data) < 10240) {
+		echo 'Out of disk space!';
+		exit();
+	}
 
 	$log->info('Ping sweep started');
 	
