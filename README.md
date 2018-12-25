@@ -36,7 +36,7 @@ Change directory into that folder and issue the following command.
 composer install
 ```
 
-Set owner to the user tha tyour web service runs as.
+Set owner to the user that your web service runs as.
 ```
 chown -R http:http .
 ```
