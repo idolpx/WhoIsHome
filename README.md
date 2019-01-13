@@ -29,7 +29,7 @@ curl      - https://curl.haxx.se/
 
 ## Installation
 
-Clone "WhoIsHome" repo to a folder in your web servers document root.
+Clone repo to a folder in your web servers document root.
 Change directory into that folder and issue the following command.
 
 ```
@@ -55,7 +55,7 @@ curl -L --max-redirs 999 http://localhost/whoishome/cron.php
 
 ## Linux Setup
 
-On linux create a file named "whoishome" in /etc/sudoers.d that contains the following line.
+On linux create a file named "WhoIsHome" in /etc/sudoers.d that contains the following line.
 Change "http" to the user that your web service runs as.
 
 ```
@@ -65,13 +65,13 @@ http ALL=(ALL) NOPASSWD: /usr/bin/nmap
 Add Cron Job to run cron.php script every 5mins
 
 ```
-*/5 * * * * curl -L --max-redirs 999 http://localhost/whoishome/cron.php
+*/5 * * * * curl -L --max-redirs 999 http://localhost/WhoIsHome/cron.php
 ```
 
 
 ## Usage
 
-Browse to  http://localhost/whoishome to get to the main user interface.
+Browse to  http://localhost/WhoIsHome to get to the main user interface.
 
-Use http://localhost/whoishome/cron.php?debug=1 to trigger the scan manually and see the debug output.
+Use http://localhost/WhoIsHome/cron.php?debug=1 to trigger the scan manually and see the debug output.
 You can also assign a group and name to each device that is found and update, delete or wake a device on the network.
